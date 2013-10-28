@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/tx
+		   http://www.springframework.org/schema/tx/spring-tx.xsd
+		   http://www.springframework.org/schema/jee 
+		   http://www.springframework.org/schema/jee/spring-jee.xsd
+		   http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<context:component-scan base-package="com.macoloc" />
+
+	<context:annotation-config />
+
+	<tx:annotation-driven />
+
+	<!--
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSourceDirect" />
+	</bean>
+	 -->
+	
+	<bean id="entityManagerFactory"
+   		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    	<property name = "persistenceXmlLocation" value = "classpath:/META-INF/spring-persistence.xml"/>
+    	<property name="dataSource" ref="dataSourceDirect" />
+	</bean>
+
+	<bean id="dataSourceDirect" class="org.postgresql.ds.PGSimpleDataSource">
+		<property name="user" value="macoloc"></property>
+		<property name="password" value="macoloc"></property>
+		<property name="portNumber" value="5432"></property>
+		<property name="serverName" value="localhost"></property>
+		<property name="databaseName" value="MaColoc"></property>
+	</bean>
+
+	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
+		id="transactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	
+</beans>

@@ -11,7 +11,7 @@ import com.macoloc.form.CreateColocationForm;
 import com.macoloc.service.contract.ColocationService;
 
 /**
- * The colocations controller.
+ * The roommates controller.
  */
 @Controller
 @RequestMapping("/roommates")
@@ -19,7 +19,7 @@ public class RoommateController extends GenericControllerImpl<Colocation, Create
 
     @Autowired
     public RoommateController(final ColocationService service) {
-        super("roommates", Colocation.class.getSimpleName(), service);
+        super("roommates", Colocation.class.getSimpleName().toLowerCase(), service);
     }
     
     @Override

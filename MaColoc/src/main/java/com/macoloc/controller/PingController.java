@@ -11,7 +11,7 @@ import com.macoloc.form.CreateColocationForm;
 import com.macoloc.service.contract.ColocationService;
 
 /**
- * The colocations controller.
+ * The pings controller.
  */
 @Controller
 @RequestMapping("/pings")
@@ -19,7 +19,7 @@ public class PingController extends GenericControllerImpl<Colocation, CreateColo
 
     @Autowired
     public PingController(final ColocationService service) {
-        super("pings", Colocation.class.getSimpleName(), service);
+        super("pings", Colocation.class.getSimpleName().toLowerCase(), service);
     }
 
     @Override

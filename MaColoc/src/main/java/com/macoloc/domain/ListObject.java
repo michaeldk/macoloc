@@ -1,5 +1,6 @@
 package com.macoloc.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
 public class ListObject extends Versionable {
 
 	private static final long serialVersionUID = 1L;

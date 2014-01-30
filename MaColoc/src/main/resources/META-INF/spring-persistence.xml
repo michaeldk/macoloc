@@ -5,23 +5,35 @@
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="root">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.macoloc.domain.Balance</class>
+		<class>com.macoloc.domain.Coin</class>
+		<class>com.macoloc.domain.CoinType</class>
 		<class>com.macoloc.domain.Colocation</class>
+		<class>com.macoloc.domain.ColocationList</class>
+		<class>com.macoloc.domain.ColocationTodoList</class>
+		<class>com.macoloc.domain.Comment</class>
 		<class>com.macoloc.domain.Invitation</class>
 		<class>com.macoloc.domain.Key</class>
+		<class>com.macoloc.domain.ListObject</class>
 		<class>com.macoloc.domain.Message</class>
 		<class>com.macoloc.domain.MessageSeenBy</class>
+		<class>com.macoloc.domain.Notification</class>
+		<class>com.macoloc.domain.NotificationType</class>
 		<class>com.macoloc.domain.Payment</class>
+		<class>com.macoloc.domain.PaymentNotification</class>
 		<class>com.macoloc.domain.PaymentParticipation</class>
 		<class>com.macoloc.domain.Ping</class>
+		<class>com.macoloc.domain.Roommate</class>
+		<class>com.macoloc.domain.RoommateList</class>
+		<class>com.macoloc.domain.Rotation</class>
 		<class>com.macoloc.domain.Subtask</class>
 		<class>com.macoloc.domain.Task</class>
 		<class>com.macoloc.domain.TaskOrder</class>
-		<class>com.macoloc.domain.Roommate</class>
 		<class>com.macoloc.domain.Versionable</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 </persistence>

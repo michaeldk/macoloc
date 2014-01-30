@@ -11,7 +11,7 @@ import com.macoloc.form.CreateColocationForm;
 import com.macoloc.service.contract.ColocationService;
 
 /**
- * The colocations controller.
+ * The key controller.
  */
 @Controller
 @RequestMapping("/keys")
@@ -19,7 +19,7 @@ public class KeyController extends GenericControllerImpl<Colocation, CreateColoc
 
     @Autowired
     public KeyController(final ColocationService service) {
-        super("keys", Colocation.class.getSimpleName(), service);
+        super("keys", Colocation.class.getSimpleName().toLowerCase(), service);
     }
 
     @Override

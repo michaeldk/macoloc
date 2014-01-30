@@ -6,20 +6,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.macoloc.controller.generic.GenericControllerImpl;
-import com.macoloc.domain.Colocation;
-import com.macoloc.form.CreateColocationForm;
-import com.macoloc.service.contract.ColocationService;
+import com.macoloc.domain.MessageSeenBy;
+import com.macoloc.form.CreateMessageSeenByForm;
+import com.macoloc.service.contract.MessageSeenByService;
 
 /**
- * The colocations controller.
+ * The messageseenby controller.
  */
 @Controller
 @RequestMapping("/messageseenby")
-public class MessageSeenByController extends GenericControllerImpl<Colocation, CreateColocationForm> {
+public class MessageSeenByController extends GenericControllerImpl<MessageSeenBy, CreateMessageSeenByForm> {
 
     @Autowired
-    public MessageSeenByController(final ColocationService service) {
-        super("messageseenby", Colocation.class.getSimpleName(), service);
+    public MessageSeenByController(final MessageSeenByService service) {
+        super("messageseenby", MessageSeenBy.class.getSimpleName().toLowerCase(), service);
     }
     
     @Override

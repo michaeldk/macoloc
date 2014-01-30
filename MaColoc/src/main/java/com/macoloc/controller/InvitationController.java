@@ -11,7 +11,7 @@ import com.macoloc.form.CreateColocationForm;
 import com.macoloc.service.contract.ColocationService;
 
 /**
- * The colocations controller.
+ * The invitations controller.
  */
 @Controller
 @RequestMapping("/invitations")
@@ -19,7 +19,7 @@ public class InvitationController extends GenericControllerImpl<Colocation, Crea
 
     @Autowired
     public InvitationController(final ColocationService service) {
-        super("invitations", Colocation.class.getSimpleName(), service);
+        super("invitations", Colocation.class.getSimpleName().toLowerCase(), service);
     }
 
     @Override

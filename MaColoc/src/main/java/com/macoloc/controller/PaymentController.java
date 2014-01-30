@@ -6,20 +6,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.macoloc.controller.generic.GenericControllerImpl;
-import com.macoloc.domain.Colocation;
-import com.macoloc.form.CreateColocationForm;
-import com.macoloc.service.contract.ColocationService;
+import com.macoloc.domain.Payment;
+import com.macoloc.form.CreatePaymentForm;
+import com.macoloc.service.contract.PaymentService;
 
 /**
- * The colocations controller.
+ * The payments controller.
  */
 @Controller
 @RequestMapping("/payments")
-public class PaymentController extends GenericControllerImpl<Colocation, CreateColocationForm> {
+public class PaymentController extends GenericControllerImpl<Payment, CreatePaymentForm> {
 
     @Autowired
-    public PaymentController(final ColocationService service) {
-        super("payments", Colocation.class.getSimpleName(), service);
+    public PaymentController(final PaymentService service) {
+        super("payments", Payment.class.getSimpleName().toLowerCase(), service);
     }
 
     @Override

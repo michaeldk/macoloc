@@ -1,20 +1,42 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<header class="art-header">
-	<h1 class="art-headline" data-left="14.46%">
-	    <a href="<c:url value="/"/>">Ma Coloc'</a>
-	</h1>
-	<h2 class="art-slogan" data-left="12.63%">Marre de perdre du temps avec la paperasse?</h2>               
-</header>
-<nav class="art-nav">
-    <div class="art-nav-inner">
-		<ul class="art-hmenu">
-			<li><a href="<c:url value="/"/>">Home</a></li>
-			<li><a href="<c:url value="/coloc"/>">Ma coloc'</a></li>
-			<li><a href="our-pastors.html">Mes tâches</a></li>
-			<li><a href="ministries.html">Mes listes</a></li>
-			<li><a href="articles.html">Messages</a></li>
-			<li><a href="events-calendar.html">Mon compte</a></li>
-			<li><a href="contacts.html">Contacts</a></li>
-		</ul> 
+<div id="header-wrapper" class="container">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">Gérer Ma Coloc</a></h1>
+			</div>
+			<div id="loginbox">
+				<input type="text" name="email" title="Entrez votre e-mail" size="25" value="${test}" />
+				<input type="password" name="password" title="Entrez votre mot de passe" size="25" value="${test}" />
+			</div>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="submenu"><span>Services</span>
+					<ul>
+						<li class="first"><a href="#">Sed imperdiet</a></li>
+						<li><a href="#">Libero felis dolor</a></li>
+						<li class="submenu"><span>Pulvinar duis</span>
+							<ul>
+								<li class="first"><a href="#">Consequat et magna amet</a></li>
+								<li><a href="#">Nullam aliquam ridiculus</a></li>
+								<li><a href="#">Sed imperdiet adipiscing lorem</a></li>
+								<li><a href="#">Feugiat sed imperdiet</a></li>
+								<li class="last"><a href="#">Libero etiam felis dolor</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Cras nulla ridiculus</a></li>
+						<li><a href="#">Feugiat imperdiet</a></li>
+						<li class="last"><a href="#">Libero felis dolor</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Clients</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">Information</a></li>
+				<li><a href="#">Case Studies</a></li>
+				<li><a href="#">Press Room</a></li>
+				<li><a href="#">Careers</a></li>
+				<li class="last"><a href="#">Contact</a></li>
+			</ul>
+			<br class="clearfix" />
+		</div>
 	</div>
-</nav>

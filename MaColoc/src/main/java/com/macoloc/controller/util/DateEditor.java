@@ -10,7 +10,7 @@ public class DateEditor extends PropertyEditorSupport {
 	 private SimpleDateFormat sdf; 
 	 
 	 public DateEditor() {
-		 sdf = new SimpleDateFormat("yyyy/MM/dd");
+		 sdf = new SimpleDateFormat("dd/MM/yyyy");
 	 }
 	 
 	 @Override

@@ -11,7 +11,7 @@ import com.macoloc.form.CreateColocationForm;
 import com.macoloc.service.contract.ColocationService;
 
 /**
- * The colocations controller.
+ * The taskorders controller.
  */
 @Controller
 @RequestMapping("/taskorders")
@@ -19,7 +19,7 @@ public class TaskOrderController extends GenericControllerImpl<Colocation, Creat
 
     @Autowired
     public TaskOrderController(final ColocationService service) {
-        super("taskorders", Colocation.class.getSimpleName(), service);
+        super("taskorders", Colocation.class.getSimpleName().toLowerCase(), service);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.macoloc.domain;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +26,7 @@ public class RoommateList extends Versionable {
 	
 	@OneToMany
     @LazyCollection(LazyCollectionOption.FALSE)
-	private ArrayList<ListObject> list = new ArrayList<ListObject>();
+	private List<ListObject> list;
     
     @NotNull
 	@OneToOne
@@ -47,11 +47,11 @@ public class RoommateList extends Versionable {
 		this.id = id;
 	}
 
-	public ArrayList<ListObject> getList() {
+	public List<ListObject> getList() {
 		return list;
 	}
 
-	public void setList(ArrayList<ListObject> list) {
+	public void setList(List<ListObject> list) {
 		this.list = list;
 	}
 

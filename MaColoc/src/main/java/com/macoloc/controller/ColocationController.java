@@ -23,7 +23,7 @@ public class ColocationController extends GenericControllerImpl<Colocation, Crea
 
     @Autowired
     public ColocationController (final ColocationService service) {
-        super("colocations", Colocation.class.getSimpleName(), service);
+        super("colocations", Colocation.class.getSimpleName().toLowerCase(), service);
     }
     
     /**

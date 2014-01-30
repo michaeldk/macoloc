@@ -21,7 +21,7 @@ public class CreateRoommateForm implements GenericForm {
 	private String password;
 	
 	@NotNull
-	private Integer colocation_id;
+	private String second_password;
 
 	public String getFirstName() {
 		return firstName;
@@ -55,11 +55,11 @@ public class CreateRoommateForm implements GenericForm {
 		this.password = password;
 	}
 
-	public Integer getColocation_id() {
-		return colocation_id;
+	public String getSecond_password() {
+		return second_password;
 	}
 
-	public void setColocation_id(Integer colocation_id) {
-		this.colocation_id = colocation_id;
+	public void setSecond_password(String second_password) {
+		this.second_password = second_password;
 	}
 }

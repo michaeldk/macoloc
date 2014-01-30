@@ -6,20 +6,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.macoloc.controller.generic.GenericControllerImpl;
-import com.macoloc.domain.Colocation;
-import com.macoloc.form.CreateColocationForm;
-import com.macoloc.service.contract.ColocationService;
+import com.macoloc.domain.Subtask;
+import com.macoloc.form.CreateSubtaskForm;
+import com.macoloc.service.contract.SubtaskService;
 
 /**
- * The colocations controller.
+ * The subtasks controller.
  */
 @Controller
 @RequestMapping("/subtasks")
-public class SubtaskController extends GenericControllerImpl<Colocation, CreateColocationForm> {
+public class SubtaskController extends GenericControllerImpl<Subtask, CreateSubtaskForm> {
 
     @Autowired
-    public SubtaskController(final ColocationService service) {
-        super("subtasks", Colocation.class.getSimpleName(), service);
+    public SubtaskController(final SubtaskService service) {
+        super("subtasks", Subtask.class.getSimpleName().toLowerCase(), service);
     }
 
     @Override

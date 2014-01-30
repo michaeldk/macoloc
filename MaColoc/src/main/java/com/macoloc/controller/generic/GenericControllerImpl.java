@@ -77,7 +77,7 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
         this.loadCreateContext(model);
         this.populateLists(model);
 
-        return "create" + this.name;
+        return "create/" + this.name;
     }
 
     /**
@@ -143,7 +143,7 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
         this.loadEntity(model, id);
         this.loadEditContext(model, id);
         this.populateLists(model);
-        return "edit" + this.name;
+        return "edit/" + this.name;
     }
 
     /**
@@ -157,7 +157,7 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
         this.loadEntity(model, id);
         this.loadEditContext(model, id);
         this.populateLists(model);
-        return "edit" + this.name;
+        return "edit/" + this.name;
     }
 
     /**
@@ -203,7 +203,6 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
      *            the exception
      */
     protected void loadErrorContext(final Model model, final Exception exception) {
-
         model.addAttribute("exception", exception.getMessage());
     }
 
@@ -214,7 +213,6 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
      *            the context model
      */
     protected void loadCreateContext(final Model model) {
-
         model.addAttribute("createForm", this.service.createForm());
     }
 
@@ -225,7 +223,6 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
      *            the context model
      */
     protected void loadEditContext(final Model model, final int id) {
-
         model.addAttribute("updateForm", this.service.createForm());
     }
 

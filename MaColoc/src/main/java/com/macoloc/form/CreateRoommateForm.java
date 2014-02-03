@@ -1,27 +1,34 @@
 package com.macoloc.form;
 
-import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
+import com.macoloc.form.annotation.FieldMatch;
 import com.macoloc.form.generic.GenericForm;
 
+@FieldMatch.List({
+    @FieldMatch(first = "password", second = "confirmPassword", message = "Les mots de passe ne correspondent pas."),
+    @FieldMatch(first = "email", second = "confirmEmail", message = "Les emails ne correspondent pas.")
+})
 public class CreateRoommateForm implements GenericForm {
 	
-	@NotNull
+	@NotEmpty(message="Veuillez indiquer votre prénom.")
 	private String firstName;
 	
-	@NotNull
+	@NotEmpty(message="Veuillez indiquer votre nom.")
 	private String lastName;
 	
-	@NotNull @Email
+	@NotEmpty(message="Veuillez indiquer votre email.") @Email(message="Veuillez indiquer un email valide.")
 	private String email;
 	
-	@NotNull
+	@NotEmpty(message="Veuillez confirmer votre email.") @Email(message="Veuillez indiquer un email valide.")
+	private String confirmEmail;
+	
+	@NotEmpty(message="Veuillez choisir un mot de passe.")
 	private String password;
 	
-	@NotNull
-	private String second_password;
+	@NotEmpty(message="Veuillez confirmer votre mot de passe.")
+	private String confirmPassword;
 
 	public String getFirstName() {
 		return firstName;
@@ -55,11 +62,19 @@ public class CreateRoommateForm implements GenericForm {
 		this.password = password;
 	}
 
-	public String getSecond_password() {
-		return second_password;
+	public String getConfirmPassword() {
+		return confirmPassword;
 	}
 
-	public void setSecond_password(String second_password) {
-		this.second_password = second_password;
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+	public String getConfirmEmail() {
+		return confirmEmail;
+	}
+
+	public void setConfirmEmail(String confirmEmail) {
+		this.confirmEmail = confirmEmail;
 	}
 }

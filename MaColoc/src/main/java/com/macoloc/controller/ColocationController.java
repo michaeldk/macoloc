@@ -38,7 +38,7 @@ public class ColocationController extends GenericControllerImpl<Colocation, Crea
     	}
     	model.addAttribute("coloc", coloc);
     	loadEntities(model);
-    	return "display" + this.name;
+    	return "display/" + this.name;
     }
 
     @Override

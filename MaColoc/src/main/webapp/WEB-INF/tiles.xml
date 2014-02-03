@@ -14,7 +14,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
 	</definition>
 	
-	<definition name="createColocation" extends="base.definition">
+	<definition name="create/colocation" extends="base.definition">
 		<put-attribute name="body" value="/WEB-INF/views/create/colocation.jsp" />
+	</definition>
+	
+	<definition name="create/roommate" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/views/create/roommate.jsp" />
 	</definition>
 </tiles-definitions>

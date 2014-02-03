@@ -1,12 +1,40 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-</body>
-</html>
+<div id="wide-content">
+	<div class="box-style3">
+		<h2 class="title">Créer un compte</h2>
+		<div class="entry">
+		
+			<form:form method="post" action="create" modelAttribute="createForm">
+				<form:errors path="*" cssClass="alert alert-danger" element="div"/>
+				<form:label path="firstName">Prénom</form:label>
+				<br/>
+				<form:input path="firstName" />
+				<br/><br/>
+				<form:label path="lastName">Nom</form:label>
+				<br/>
+				<form:input path="lastName" />
+				<br/><br/>
+				<form:label path="email">Email</form:label>
+				<br/>
+				<form:input path="email" />
+				<br/><br/>
+				<form:label path="confirmEmail">Email (confirmation)</form:label>
+				<br/>
+				<form:input path="confirmEmail" />
+				<br/><br/>
+				<form:label path="password">Mot de passe</form:label>
+				<br/>
+				<form:password path="password" />
+				<br/><br/>
+				<form:label path="confirmPassword">Mot de passe (confirmation)</form:label>
+				<br/>
+				<form:password path="confirmPassword" />
+				<br/><br/>
+				<input type="submit" value="Continuer"/>
+			</form:form>
+		</div>
+	</div>
+</div>

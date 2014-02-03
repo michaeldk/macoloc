@@ -14,6 +14,7 @@
 		<link href="<c:url value="/css/default.css"/>" rel="stylesheet" type="text/css" media="all" />
 		<script type="text/javascript" src="<c:url value="/js/jquery-1.7.1.min.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="/js/jquery.dropotron-1.0.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="/js/jquery.form.min.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="/js/init.js"/>"></script>
 		<!--[if lte IE 7]>
 		<link href="ie6.css" rel="stylesheet" type="text/css" />
@@ -27,7 +28,7 @@
 		<div id="banner-caption">
 			<h2>Pour que votre coloc'</h2>
 			<p class="text1">ne vous regarde plus</p>
-			<p class="text2">avec une envie de meutre</p>
+			<p class="text2">avec une envie de meurtre</p>
 		</div>
 	</div>
 	<div id="page" class="container">

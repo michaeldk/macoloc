@@ -23,12 +23,27 @@ public class RoommateServiceImpl extends GenericServiceImpl<Roommate, CreateRoom
     }
 
     @Override
-    protected Roommate populateEntity(final Roommate element, final CreateRoommateForm form) {
+    protected Roommate populateEntity(Roommate element, final CreateRoommateForm form) {
+    	if (element == null) {
+    		element = new Roommate();
+    	}
+    	element.setEmail(form.getEmail());
+    	element.setFirstName(form.getFirstName());
+    	element.setLastName(form.getLastName());
+    	element.setPassword(form.getPassword());
     	return element;
     }
 
     @Override
-    protected void populateForm(final CreateRoommateForm form, final Roommate element) {
+    protected void populateForm(CreateRoommateForm form, final Roommate element) {
+    	if (form == null) {
+    		form = new CreateRoommateForm();
+    	}
+    	form.setEmail(element.getEmail());
+    	form.setFirstName(element.getFirstName());
+    	form.setLastName(element.getLastName());
+    	form.setPassword(element.getPassword());
+    	form.setConfirmPassword(element.getPassword());
     }
 	
 	public void verifyBusinessRules(Roommate roommate) throws Exception {

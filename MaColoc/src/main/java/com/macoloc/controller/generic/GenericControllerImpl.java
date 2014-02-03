@@ -65,7 +65,7 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
     public String display(@PathVariable
     final int id, final Model model, HttpSession session) {
         this.loadEntityContext(model, id);
-        return "display" + this.name;
+        return "display/" + this.name;
     }
 
     /**
@@ -95,12 +95,12 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
                 return "redirect:/" + this.root + '/';
             } else {
                 this.populateLists(model);
-                return "create" + this.name;
+                return "create/" + this.name;
             }
         } catch (final Exception exception) {
             this.populateLists(model);
             this.loadErrorContext(model, exception);
-            return "create" + this.name;
+            return "create/" + this.name;
         }
     }
 
@@ -122,13 +122,13 @@ public abstract class GenericControllerImpl<T, F extends GenericForm> implements
             } else {
                 this.loadEntity(model, id);
                 this.populateLists(model);
-                return "edit" + this.name;
+                return "edit/" + this.name;
             }
         } catch (final Exception exception) {
             this.loadEntity(model, id);
             this.populateLists(model);
             this.loadErrorContext(model, exception);
-            return "edit" + this.name;
+            return "edit/" + this.name;
         }
     }
     

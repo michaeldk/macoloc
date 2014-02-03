@@ -5,8 +5,12 @@
 				<h1><a href="#">Gérer Ma Coloc</a></h1>
 			</div>
 			<div id="loginbox">
-				<input type="text" name="email" title="Entrez votre e-mail" size="25" value="${test}" />
-				<input type="password" name="password" title="Entrez votre mot de passe" size="25" value="${test}" />
+				<form id="login" action="<c:url value="/login"/>">
+					<input type="text" name="userName" title="Entrez votre e-mail" size="25" value="${test}" placeholder="Email"/>
+					<br/>
+					<input type="password" name="password" title="Entrez votre mot de passe" size="25" value="${test}" placeholder="Password"/>
+					<input type="submit" value="Se connecter"/>
+				</form>
 			</div>
 		</div>
 		<div id="menu">

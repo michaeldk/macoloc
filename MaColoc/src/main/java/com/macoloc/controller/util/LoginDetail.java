@@ -1,12 +1,14 @@
 package com.macoloc.controller.util;
 
-import java.util.List;
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
 
 public class LoginDetail {
  
     private boolean loggedIn;
     private String principal;
-    private List roles;
+    private Collection<? extends GrantedAuthority> roles;
  
     public LoginDetail success() {
         loggedIn = true;
@@ -39,11 +41,11 @@ public class LoginDetail {
         this.principal = principal;
     }
  
-    public List getRoles() {
+    public Collection<? extends GrantedAuthority> getRoles() {
         return roles;
     }
  
-    public void setRoles(List roles) {
+    public void setRoles(Collection<? extends GrantedAuthority> roles) {
         this.roles = roles;
     }
 }

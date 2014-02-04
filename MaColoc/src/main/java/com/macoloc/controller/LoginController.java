@@ -29,7 +29,9 @@ public class LoginController {
         try {
             Authentication authentication = customAuthenticationProvider.authenticate(authenticationToken);
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            return new LoginDetail().success().principal(authentication.getName());
+            LoginDetail ld = new LoginDetail().success().principal(authentication.getName());
+            ld.setRoles(authentication.getAuthorities());
+            return ld;
         } catch (AuthenticationException ex) {
             return new LoginDetail().failed();
         }

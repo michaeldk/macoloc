@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -26,14 +27,14 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		String name = authentication.getName();
 		String password = authentication.getCredentials().toString();
 		Roommate user = roommateService.findByEmail(name);
-		if (user != null && password.equals(user.getPassword())) {
+		if (user != null && user.getPassword().equals(PasswordHelper.hashPassword(name, password))) {
 			List<GrantedAuthority> grantedAuths = new ArrayList<GrantedAuthority>();
 			grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
 			Authentication auth = new UsernamePasswordAuthenticationToken(name,
 					password, grantedAuths);
 			return auth;
 		} else {
-			return null;
+			throw new BadCredentialsException("Email ou mot de passe incorrect.");
 		}
 	}
  
